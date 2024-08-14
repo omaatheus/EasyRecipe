@@ -10,9 +10,14 @@ export const styles = StyleSheet.create({
       alignItems: 'center',
       justifyContent: 'center',
     },
-    text: {
-        fontFamily: font_family.REGULAR,
-        fontSize: font_size.XL,
+
+    main: {
+      width: "100%",
+      height: "85%",
+      alignItems: 'center',
+    },
+
+    cardScrollView: {
+      width: "80%",
     }
-  });
-  
+});
