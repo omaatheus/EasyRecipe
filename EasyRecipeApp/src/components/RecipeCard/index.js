@@ -36,21 +36,23 @@ const styles = StyleSheet.create({
     },
 
     textContainer: {
-      width: "auto",
-      height: "auto",
+      width: "51%",
+      height: "100%",
+      alignItems: 'flex-start',
+      justifyContent: 'center'
     },
 
     cardTitle: {
-        textAlign: "left",
         fontFamily: theme.font_family.BOLD,
         fontSize: theme.font_size.XL,
         color: theme.colors.BLACK_GREEN,
+
     },
 
     cardSubtitle: {
-        textAlign: "left",
         fontFamily: theme.font_family.REGULAR,
-        fontSize: theme.font_size.LG,
+        fontSize: theme.font_size.MD,
         color: theme.colors.LIMA,
+        
     },
 });
