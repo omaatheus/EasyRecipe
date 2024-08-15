@@ -1,17 +1,17 @@
-import { View, Image, Text, StyleSheet } from "react-native";
+import { View, Image, Text, StyleSheet, TouchableOpacity } from "react-native";
 import React from "react";
 import theme from "../../../theme";
 
 export function RecipeCard({image, title, subtitle}) {
   return (
-    <View style={styles.card}>
+    <TouchableOpacity style={styles.card}>
         <Image style={styles.cardImage} source={image}/>
 
       <View style={styles.textContainer}>
         <Text style={styles.cardTitle}>{title}</Text>
         <Text style={styles.cardSubtitle}>{subtitle}</Text>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 }
 
