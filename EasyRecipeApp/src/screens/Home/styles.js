@@ -16,8 +16,4 @@ export const styles = StyleSheet.create({
       height: "85%",
       alignItems: 'center',
     },
-
-    cardScrollView: {
-      width: "80%",
-    }
 });

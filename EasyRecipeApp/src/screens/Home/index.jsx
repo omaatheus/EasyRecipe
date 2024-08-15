@@ -1,12 +1,12 @@
-import { StatusBar, View, ScrollView, FlatList } from 'react-native'
+import { StatusBar, View, FlatList } from 'react-native'
 import { useState } from 'react'
 
 import { styles } from './styles'
 import { ButtonAdd } from '../../components/ButtonAdd'
 import { Header } from '../../components/Header'
 import { Highlight } from '../../components/Highlight'
-import { RecipeCard } from '../../components/RecipeCard'
 import { ListEmpty } from '../../components/ListEmpty'
+import { RecipeCard } from '../../components/RecipeCard'
 
 import bolo from '../../assets/bolochocolate.png'
 import lasanha from '../../assets/lasanha.png'
@@ -19,9 +19,9 @@ export function Home() {
   return (
     <View style={styles.container}>
       <StatusBar
-        barStyle='darck-content' //Cor dos icones
-        backgroundColor='tranparent' //Cor de fundo 
-        translucent //Define que o copo do site começa no topo 
+        barStyle='dark-content' //Cor dos icones
+        backgroundColor='transparent' //Cor de fundo 
+        translucent //Define que o corpo do site começa no topo 
       />
 
       <Header/>
@@ -32,7 +32,7 @@ export function Home() {
           subtitle="Veja suas receitas salvas aqui."
         />
 
-        <FlatList 
+        <FlatList
           data={recept}
           keyExtractor={item => item}
           renderItem={({item}) => (
@@ -43,11 +43,11 @@ export function Home() {
             />
           )}
           contentContainerStyle = {recept.length === 0 && { flex: 1 }}
-        ListEmptyComponent={() => (
-          <ListEmpty 
-            message="Nenhuma receita registrada."
-          />
-        )}
+          ListEmptyComponent={() => (
+            <ListEmpty
+              message="Nenhuma receita registrada."
+            />
+          )}
         />
 
         <ButtonAdd title="Adicionar Receita" />
