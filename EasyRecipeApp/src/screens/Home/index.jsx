@@ -1,20 +1,25 @@
 import { StatusBar, View, FlatList } from 'react-native'
 import { useState } from 'react'
-
 import { styles } from './styles'
 import { ButtonAdd } from '../../components/ButtonAdd'
 import { Header } from '../../components/Header'
 import { Highlight } from '../../components/Highlight'
 import { ListEmpty } from '../../components/ListEmpty'
 import { RecipeCard } from '../../components/RecipeCard'
+import { useNavigation } from '@react-navigation/native';
 
 import bolo from '../../assets/bolochocolate.png'
 import lasanha from '../../assets/lasanha.png'
 
-
 export function Home() {
+  const navigation = useNavigation();
+
   const [isLoading, setIsLoading] = useState(true)
   const [recept, setRecept] = useState (['Oi AMorrr']);
+
+  function handleAddRecipe() {
+    navigation.navigate('AddRecipe');
+  }
 
   return (
     <View style={styles.container}>
@@ -50,7 +55,10 @@ export function Home() {
           )}
         />
 
-        <ButtonAdd title="Adicionar Receita" />
+        <ButtonAdd 
+          title="Adicionar Receita"
+          props={handleAddRecipe}
+        />
       </View>
     </View>
   )
