@@ -1,4 +1,4 @@
-import { Text, View } from 'react-native'
+import { Text, View, TouchableWithoutFeedback, Keyboard } from 'react-native'
 import { styles } from './styles'
 import React from 'react'
 import { useNavigation } from '@react-navigation/native';
@@ -8,6 +8,7 @@ export function AddRecipe() {
   const navigation = useNavigation();
 
   return (
+    <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
     <View style={styles.container}>
       <Text>Add Recipe Screen</Text>
 
@@ -17,5 +18,6 @@ export function AddRecipe() {
       {/* true = input grande */}
       <Input showBigInput={true}/>
     </View>
+    </TouchableWithoutFeedback>
   )
 }
