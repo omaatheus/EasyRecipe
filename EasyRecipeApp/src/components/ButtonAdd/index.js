@@ -1,5 +1,5 @@
-import { TouchableOpacity, Text, StyleSheet } from "react-native";
 import React from "react";
+import { TouchableOpacity, Text, StyleSheet } from "react-native";
 import theme from "../../../theme";
 
 export function ButtonAdd({props, title}) {
@@ -13,7 +13,7 @@ export function ButtonAdd({props, title}) {
 const styles = StyleSheet.create({
     buttonAdd: {
         width: "90%",
-        height: "auto",
+        height: 50,
         margin: "5%",
         padding: "3%",
         borderRadius: 10,

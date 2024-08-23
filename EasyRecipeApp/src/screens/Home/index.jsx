@@ -1,15 +1,16 @@
-import { StatusBar, View, FlatList } from 'react-native'
-import { useState } from 'react'
-import { styles } from './styles'
-import { ButtonAdd } from '../../components/ButtonAdd'
-import { Header } from '../../components/Header'
-import { Highlight } from '../../components/Highlight'
-import { ListEmpty } from '../../components/ListEmpty'
-import { RecipeCard } from '../../components/RecipeCard'
+import React from "react";
+import { View, FlatList } from 'react-native';
+import { useState } from 'react';
+import { styles } from './styles';
+import { ButtonAdd } from '../../components/ButtonAdd';
+import { Header } from '../../components/Header';
+import { Highlight } from '../../components/Highlight';
+import { ListEmpty } from '../../components/ListEmpty';
+import { RecipeCard } from '../../components/RecipeCard';
 import { useNavigation } from '@react-navigation/native';
 
-import bolo from '../../assets/bolochocolate.png'
-import lasanha from '../../assets/lasanha.png'
+import bolo from '../../assets/bolochocolate.png';
+import lasanha from '../../assets/lasanha.png';
 
 export function Home() {
   const navigation = useNavigation();
@@ -23,12 +24,6 @@ export function Home() {
 
   return (
     <View style={styles.container}>
-      <StatusBar
-        barStyle='dark-content' //Cor dos icones
-        backgroundColor='transparent' //Cor de fundo 
-        translucent //Define que o corpo do site começa no topo 
-      />
-
       <Header/>
 
       <View style={styles.main}>
@@ -38,6 +33,7 @@ export function Home() {
         />
 
         <FlatList
+          style={styles.FlatList}
           data={recept}
           keyExtractor={item => item}
           renderItem={({item}) => (

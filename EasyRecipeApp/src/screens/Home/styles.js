@@ -1,4 +1,4 @@
-import { StyleSheet } from "react-native";
+import { FlatList, StyleSheet } from "react-native";
 import theme from "../../../theme";
 
 const { colors, font_family, font_size } = theme
@@ -15,5 +15,9 @@ export const styles = StyleSheet.create({
       width: "100%",
       height: "85%",
       alignItems: 'center',
+    },
+
+    FlatList: {
+      width: "90%",
     },
 });

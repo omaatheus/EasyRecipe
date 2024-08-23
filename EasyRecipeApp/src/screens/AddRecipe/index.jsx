@@ -1,22 +1,49 @@
-import { Text, View, TouchableWithoutFeedback, Keyboard } from 'react-native'
+import React from "react";
+import { Text, View, TouchableWithoutFeedback, Keyboard, TouchableOpacity } from 'react-native'
 import { styles } from './styles'
-import React from 'react'
-import { useNavigation } from '@react-navigation/native';
+import { ButtonAdd } from '../../components/ButtonAdd';
+import { Header } from '../../components/Header';
+import { Highlight } from '../../components/Highlight';
 import { Input } from '../../components/Input';
+import { ArrowLeft } from "phosphor-react-native";
+import { useNavigation } from '@react-navigation/native';
 
 export function AddRecipe() {
   const navigation = useNavigation();
 
+  function handleAddIngredient() {
+    navigation.navigate('AddIngredient');
+  }
+
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
     <View style={styles.container}>
-      <Text>Add Recipe Screen</Text>
+      <Header>
+        <TouchableOpacity>
+          <ArrowLeft size={32}/>
+        </TouchableOpacity>
+      </Header>
 
-      {/* false = input pequeno */}
-      <Input showBigInput={false}/>
+      <View style={styles.main}>
+        <Highlight
+          title="Criando Receita" 
+          subtitle="Adicione título e descrição para prosseguir para a adição dos ingredientes."
+        />
 
-      {/* true = input grande */}
-      <Input showBigInput={true}/>
+        <View style={styles.inputContainer}>
+          <Text style={styles.title}>Título:</Text>
+          <Input showBigInput={false}/>
+
+          <Text style={styles.title}>Descrição:</Text>
+          <Input showBigInput={true}/>
+        </View>
+
+        <ButtonAdd
+          style={styles.ButtonAdd}
+          title="Criar Receita"
+          props={handleAddIngredient}
+        />
+      </View>
     </View>
     </TouchableWithoutFeedback>
   )

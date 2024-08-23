@@ -1,5 +1,5 @@
-import { View, Image, StyleSheet } from "react-native";
 import React from "react";
+import { View, Image, StyleSheet } from "react-native";
 import theme from "../../../theme";
 
 export function Header() {
@@ -14,11 +14,5 @@ const styles = StyleSheet.create({
         width: "100%",
         height: "15%",
         backgroundColor: theme.colors.LIMA,
-    },
-
-    logo: {
-        width: "auto",
-        height: "100%",
-        resizeMode: "contain",
     },
 });
