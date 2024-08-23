@@ -31,11 +31,9 @@ export function AddRecipe() {
         />
 
         <View style={styles.inputContainer}>
-          <Text style={styles.title}>Título:</Text>
-          <Input showBigInput={false}/>
+          <Input showBigInput={false} title="Título"/>
 
-          <Text style={styles.title}>Descrição:</Text>
-          <Input showBigInput={true}/>
+          <Input showBigInput={true} title="Descrição"/>
         </View>
 
         <ButtonAdd
