@@ -18,6 +18,7 @@ const styles = StyleSheet.create({
         padding: "3%",
         borderRadius: 10,
         backgroundColor: theme.colors.LIMA,
+        
     },
 
     buttonAddText: {
