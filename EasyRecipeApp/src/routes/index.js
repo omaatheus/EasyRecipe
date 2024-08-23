@@ -1,7 +1,7 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Home } from '../screens/Home';
 import { AddRecipe } from '../screens/AddRecipe';
-import { AddIngredient } from '../screens/AddIngredient';
+import { AddIngredients } from '../screens/AddIngredients';
 
 const Stack = createNativeStackNavigator();
 
@@ -21,8 +21,8 @@ export default function Routes() {
             />
 
             <Stack.Screen
-                name='AddIngredient'
-                component={AddIngredient}
+                name='AddIngredients'
+                component={AddIngredients}
                 options={{ headerShown: false}}
             />
         </Stack.Navigator>

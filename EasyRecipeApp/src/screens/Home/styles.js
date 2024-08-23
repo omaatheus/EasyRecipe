@@ -1,5 +1,5 @@
-import { StyleSheet } from "react-native";
-import theme from "../../../theme";
+import { StyleSheet } from 'react-native';
+import theme from '../../../theme';
 
 const { colors, font_family, font_size } = theme
 
@@ -12,8 +12,8 @@ export const styles = StyleSheet.create({
     },
 
     main: {
-      width: "100%",
-      height: "85%",
+      width: '100%',
+      height: '85%',
       alignItems: 'center',
     },
 });

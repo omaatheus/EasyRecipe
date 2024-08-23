@@ -1,40 +1,35 @@
-import { StatusBar, View, FlatList } from 'react-native'
-import { useState } from 'react'
-import { styles } from './styles'
-import { ButtonAdd } from '../../components/ButtonAdd'
-import { Header } from '../../components/Header'
-import { Highlight } from '../../components/Highlight'
-import { ListEmpty } from '../../components/ListEmpty'
-import { RecipeCard } from '../../components/RecipeCard'
+import React from 'react';
+import { View, FlatList } from 'react-native';
+import { styles } from './styles';
+import { useState } from 'react';
+import { Header } from '../../components/Header';
+import { Highlight } from '../../components/Highlight';
+import { ListEmpty } from '../../components/ListEmpty';
+import { RecipeCard } from '../../components/RecipeCard';
+import { ButtonAdd } from '../../components/ButtonAdd';
 import { useNavigation } from '@react-navigation/native';
 
-import bolo from '../../assets/bolochocolate.png'
-import lasanha from '../../assets/lasanha.png'
+import bolo from '../../assets/bolochocolate.png';
+import lasanha from '../../assets/lasanha.png';
 
 export function Home() {
   const navigation = useNavigation();
 
-  const [isLoading, setIsLoading] = useState(true)
+  const [isLoading, setIsLoading] = useState(true);
   const [recept, setRecept] = useState (['Oi AMorrr']);
 
-  function handleAddRecipe() {
+  function handleNavAddRecipe() {
     navigation.navigate('AddRecipe');
   }
 
   return (
     <View style={styles.container}>
-      <StatusBar
-        barStyle='dark-content' //Cor dos icones
-        backgroundColor='transparent' //Cor de fundo 
-        translucent //Define que o corpo do site começa no topo 
-      />
-
       <Header/>
 
       <View style={styles.main}>
         <Highlight 
-          title="Receitas" 
-          subtitle="Veja suas receitas salvas aqui."
+          title='Receitas'
+          subtitle='Veja suas receitas salvas aqui.'
         />
 
         <FlatList
@@ -50,16 +45,18 @@ export function Home() {
           contentContainerStyle = {recept.length === 0 && { flex: 1 }}
           ListEmptyComponent={() => (
             <ListEmpty
-              message="Nenhuma receita registrada."
+              message='Nenhuma receita registrada.'
             />
           )}
         />
 
         <ButtonAdd 
-          title="Adicionar Receita"
-          props={handleAddRecipe}
+          title='Adicionar Receita'
+          props={handleNavAddRecipe}
+          showRedButton={false}
+          showWhiteText={false}
         />
       </View>
     </View>
-  )
+  );
 }

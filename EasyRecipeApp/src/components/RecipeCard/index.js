@@ -1,11 +1,11 @@
-import { View, Image, Text, StyleSheet, TouchableOpacity } from "react-native";
-import React from "react";
-import theme from "../../../theme";
+import React from 'react';
+import { StyleSheet, View, Image, Text, TouchableOpacity } from 'react-native';
+import theme from '../../../theme';
 
 export function RecipeCard({image, title, subtitle}) {
   return (
     <TouchableOpacity style={styles.card}>
-        <Image style={styles.cardImage} source={image}/>
+      <Image style={styles.cardImage} source={image}/>
 
       <View style={styles.textContainer}>
         <Text style={styles.cardTitle}>{title}</Text>
@@ -17,29 +17,31 @@ export function RecipeCard({image, title, subtitle}) {
 
 const styles = StyleSheet.create({
     card: {
-        width: "100%",
+        width: '90%',
         height: 120,
         marginVertical: 10,
         borderRadius: 20,
-        display: "flex",
-        flexDirection: "row",
-        alignItems: "center",
-        justifyContent: "flex-start",
+        display: 'flex',
+        flexDirection: 'row',
+        alignSelf: 'center',
+        alignItems: 'center',
+        justifyContent: 'flex-start',
         backgroundColor: theme.colors.LIGHT_GREEN,
     },
 
     cardImage: {
-        width: "35%",
-        height: "80%",
+        width: '35%',
+        height: '80%',
         marginHorizontal: 20,
         borderRadius: 20,
+        backgroundColor: theme.colors.LIMA,
     },
 
     textContainer: {
-      width: "51%",
-      height: "100%",
+      width: '51%',
+      height: '100%',
       alignItems: 'flex-start',
-      justifyContent: 'center'
+      justifyContent: 'center',
     },
 
     cardTitle: {
@@ -52,7 +54,6 @@ const styles = StyleSheet.create({
     cardSubtitle: {
         fontFamily: theme.font_family.REGULAR,
         fontSize: theme.font_size.MD,
-        color: theme.colors.LIMA,
-        
+        color: theme.colors.WHITE,
     },
 });

@@ -1,5 +1,6 @@
-import { StyleSheet, View, Text } from "react-native";
-import theme from "../../../theme";
+import React from 'react';
+import { StyleSheet, View, Text } from 'react-native';
+import theme from '../../../theme';
 
 export function ListEmpty(message){
     return(
