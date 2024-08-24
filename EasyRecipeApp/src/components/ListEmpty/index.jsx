@@ -1,7 +1,7 @@
 import { StyleSheet, View, Text } from "react-native";
 import theme from "../../../theme";
 
-export function ListEmpty(message){
+export function ListEmpty({message}){
     return(
         <View style={styles.content}>
             <Text style={styles.mensage}>

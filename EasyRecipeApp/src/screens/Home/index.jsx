@@ -15,10 +15,14 @@ export function Home() {
   const navigation = useNavigation();
 
   const [isLoading, setIsLoading] = useState(true)
-  const [recept, setRecept] = useState (['Oi AMorrr']);
+  const [recept, setRecept] = useState ([{
+    title: 'Bolo de Chocolate',
+    description: 'Bolo feito com muito amor em 10 minutos',
+    image: bolo,
+  }]);
 
   function handleAddRecipe() {
-    navigation.navigate('AddRecipe');
+    navigation.navigate('AddIngredient');
   }
 
   return (
@@ -42,9 +46,9 @@ export function Home() {
           keyExtractor={item => item}
           renderItem={({item}) => (
             <RecipeCard
-              title={item}
-              subtitle={item}
-              image={item}
+              title={item.title}
+              subtitle={item.description}
+              image={item.image}
             />
           )}
           contentContainerStyle = {recept.length === 0 && { flex: 1 }}
@@ -58,6 +62,7 @@ export function Home() {
         <ButtonAdd 
           title="Adicionar Receita"
           props={handleAddRecipe}
+          
         />
       </View>
     </View>

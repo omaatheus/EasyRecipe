@@ -2,7 +2,7 @@ import { StyleSheet, TextInput, Text, View, TouchableOpacity } from 'react-nativ
 import React from 'react'
 import theme from '../../../theme'
 
-export function ButtonIng({title, onPress, value, onChangeText, icon}) {
+export function ButtonIng({title, onPress, value, onChangeText, icon, readOnly, remove}) {
   return (
     <View style={styles.container}>
     <View style={styles.form}>
@@ -12,11 +12,16 @@ export function ButtonIng({title, onPress, value, onChangeText, icon}) {
       placeholderTextColor={theme.colors.BLACK_GREEN}
       onChangeText={onChangeText}
       value={value}
+      readOnly={readOnly}
     />
-
-    <TouchableOpacity style={styles.button} onPress={onPress}>
+    {remove ? <TouchableOpacity style={styles.buttonRed} onPress={onPress}>
       <Text style={styles.buttonText}>{icon}</Text>
     </TouchableOpacity>
+  : <TouchableOpacity style={styles.button} onPress={onPress}>
+  <Text style={styles.buttonText}>{icon}</Text>
+</TouchableOpacity>  
+  }
+    
 
   </View>
   </View>
@@ -44,6 +49,13 @@ const styles = StyleSheet.create({
         width: 56,
         justifyContent: 'center',
     },
+    buttonRed: {
+        backgroundColor: theme.colors.RED,
+        borderRadius: 10,
+        height: 56,
+        width: 56,
+        justifyContent: 'center',
+    },
     buttonText: {
         color: theme.colors.WHITE,
         fontSize: 30,
@@ -54,6 +66,5 @@ const styles = StyleSheet.create({
         width: '100%',
         flexDirection: 'row',
         marginTop: 20,
-        marginBottom: 42,
     },
 })

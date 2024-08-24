@@ -4,6 +4,15 @@ export const styles = StyleSheet.create({
     container: {
         flex: 1,
         alignItems: 'center',
-        justifyContent: 'center',
-    }
+        
+    },
+    viewInput: {
+        minWidth: '100%',
+        minHeight: 'auto',
+        alignItems: 'center',
+    },
+    viewInput2: {
+        marginTop: -100,
+    },
+
 })

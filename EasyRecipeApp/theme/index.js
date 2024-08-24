@@ -17,6 +17,8 @@ export default {
         GRAY_800: '#202024',
         GRAY_700: '#29292E',
         GRAY_600: '#323238',
+
+        RED: '#FF0000'
     },
 
     font_family: {
