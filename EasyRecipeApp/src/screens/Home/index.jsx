@@ -22,7 +22,7 @@ export function Home() {
   }]);
 
   function handleAddRecipe() {
-    navigation.navigate('AddIngredient');
+    navigation.navigate('AddRecipe');
   }
 
   return (

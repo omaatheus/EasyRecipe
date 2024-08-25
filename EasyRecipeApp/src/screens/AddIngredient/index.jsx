@@ -75,5 +75,5 @@ export function AddIngredient() {
       add={false}
       />
     </View>
-  )
+  );
 }

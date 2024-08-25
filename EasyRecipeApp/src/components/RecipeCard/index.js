@@ -29,8 +29,8 @@ const styles = StyleSheet.create({
     },
 
     cardImage: {
-        width: "35%",
-        height: "80%",
+        width: 100,
+        height: 100,
         marginHorizontal: 20,
         borderRadius: 20,
     },
