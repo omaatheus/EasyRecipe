@@ -1,6 +1,6 @@
 import { View, Image, Text, StyleSheet, TouchableOpacity } from "react-native";
 import React from "react";
-import theme from "../../../theme";
+import theme from "../../theme";
 
 export function RecipeCard({image, title, subtitle}) {
   return (

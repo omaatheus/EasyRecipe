@@ -1,6 +1,6 @@
 import { StyleSheet, TextInput, Text, View, TouchableOpacity } from 'react-native'
 import React from 'react'
-import theme from '../../../theme'
+import theme from "../../theme";
 
 export function ButtonIng({title, onPress, value, onChangeText, icon, readOnly, remove}) {
   return (

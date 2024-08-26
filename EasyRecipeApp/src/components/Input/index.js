@@ -1,6 +1,6 @@
 import { TextInput, StyleSheet, View, Text } from "react-native";
 import React from "react";
-import theme from "../../../theme";
+import theme from "../../theme";
 
 export function Input({showBigInput, title, onChangeText}) {
   return (

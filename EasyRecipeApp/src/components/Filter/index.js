@@ -1,5 +1,5 @@
 import { Text, TouchableOpacity, StyleSheet, View } from "react-native";
-import theme from "../../../theme";
+import theme from "../../theme";
 
 export function Filter({title, isActive, onPress}){
     return(
