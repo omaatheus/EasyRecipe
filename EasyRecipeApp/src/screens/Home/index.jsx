@@ -10,6 +10,7 @@ import { useNavigation } from '@react-navigation/native';
 
 import bolo from '../../assets/bolochocolate.png'
 import lasanha from '../../assets/lasanha.png'
+import { getAllRecipes } from '../../storage/recipe/getAllRecipes'
 
 export function Home() {
   const navigation = useNavigation();
@@ -21,8 +22,19 @@ export function Home() {
     image: bolo,
   }]);
 
-  function handleAddRecipe() {
+  async function handleAddRecipe() {
     navigation.navigate('AddRecipe');
+  }
+
+  async function fetchRecipe(){
+    try {
+    const data = await getAllRecipes()
+    
+    setRecept(data)
+
+    } catch(error) {
+      console.error(`ERRO > ${error}`);
+    }
   }
 
   return (
