@@ -14,8 +14,8 @@ import * as FileSystem from 'expo-file-system'
 
 export function AddRecipe() {
   const navigation = useNavigation();
-  const [title, setTitle] = useState()
-  const [description, setDescription] = useState()
+  const [title, setTitle] = useState('')
+  const [description, setDescription] = useState('')
   const [image, setImage] = useState("https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png")
 
   async function handleUserPhotoSelect() {
@@ -57,7 +57,7 @@ export function AddRecipe() {
 
   function handleOnButton() {
 
-    navigation.navigate('AddIngredient', { title: 'Bolo de arroz', description: 'Delicioso bolo de Arroz da vovó', image: 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fprimeirapagina.com.br%2Fgastronomia%2Fbolo-de-arroz-e-melhor-que-muita-gente-aprenda-a-fazer-essa-delicia%2F&psig=AOvVaw2edwnDlKA2K2cmry89nQCF&ust=1724690679740000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCNjHvtDLkIgDFQAAAAAdAAAAABAE' })
+    navigation.navigate('AddIngredient', { title, description, image })
 
     console.log('> Cheguei aqui');
 
@@ -74,9 +74,17 @@ export function AddRecipe() {
         <Highlight title="Criando Receita" subtitle="Adicione título e descrição para prosseguir para a adição dos ingredientes." />
 
         {/* false = input pequeno */}
-        <Input showBigInput={false} title={t} />
+        <Input 
+        showBigInput={false} 
+        title={t}
+        onChangeText={setTitle}
+        />
         {/* true = input grande */}
-        <Input showBigInput={true} title={d} />
+        <Input 
+        showBigInput={true} 
+        title={d} 
+        onChangeText={setDescription}
+        />
 
         <Image style={styles.cardImage} source={{ uri: image }} />
 

@@ -8,27 +8,28 @@ import { ButtonIng } from '../../components/ButtonIng';
 import { Header } from '../../components/Header';
 import { ListEmpty } from '../../components/ListEmpty';
 import { ButtonAdd } from '../../components/ButtonAdd';
+import { useRoute } from '@react-navigation/native';
 
 
 export function AddIngredient() {
 
   const [info, setInfo ] = useState('Ingredientes')
   const [passos, setPassos] = useState([
-    '100g Mortadela',
-    '1 Pão Francês',
-    '2x Alfaces',
-    '50 Ovos',
-    '12 Chocolates'
+
   ]) 
 
   const navigation = useNavigation();
+
+  const route = useRoute()
+
+  const { title, description, image } = route.params
 
   return (
     <View style={styles.container}>
       <Header showBackButton={true} />
 
       <Highlight 
-      title='Criando Receita'
+      title={title}
       subtitle='Adicione ingredientes e instruções a sua receita.'
       />
 
