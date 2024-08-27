@@ -11,10 +11,13 @@ export async function recipeCreate({ title, description, image }) {
             description: description,
             image: image
         };
-
+        
         const updatedRecipes = [...storedRecipes, newRecipe];
 
         await AsyncStorage.setItem(RECIPE_COLLECTION, JSON.stringify(updatedRecipes));
+
+        console.log('> Deu tudo certo!');
+        
     } catch (error) {
         throw error;
     }

@@ -1,5 +1,7 @@
 import { StatusBar, View, FlatList } from 'react-native'
-import { useState } from 'react'
+import { useFocusEffect } from '@react-navigation/native'
+import { useCallback } from 'react'
+import { useState, useEffect } from 'react'
 import { styles } from './styles'
 import { ButtonAdd } from '../../components/ButtonAdd'
 import { Header } from '../../components/Header'
@@ -8,35 +10,40 @@ import { ListEmpty } from '../../components/ListEmpty'
 import { RecipeCard } from '../../components/RecipeCard'
 import { useNavigation } from '@react-navigation/native';
 
-import bolo from '../../assets/bolochocolate.png'
-import lasanha from '../../assets/lasanha.png'
 import { getAllRecipes } from '../../storage/recipe/getAllRecipes'
 
 export function Home() {
   const navigation = useNavigation();
 
   const [isLoading, setIsLoading] = useState(true)
-  const [recept, setRecept] = useState ([{
-    title: 'Bolo de Chocolate',
-    description: 'Bolo feito com muito amor em 10 minutos',
-    image: bolo,
-  }]);
+  const [recept, setRecept] = useState ([{  }]); //valor do estado será uma array com object vazio
 
-  async function handleAddRecipe() {
+  async function handleAddRecipes() {
     navigation.navigate('AddRecipe');
   }
 
-  async function fetchRecipe(){
+  async function fetchRecipes(){
     try {
-    const data = await getAllRecipes()
+    const data = await getAllRecipes() //armazeno as infos dentro da variavel
     
-    setRecept(data)
+    setRecept(data) //atualizo o estado
+    
+    console.log(recept);
+    
 
     } catch(error) {
       console.error(`ERRO > ${error}`);
     }
   }
 
+  function handleOpenRecipe(title) {
+    navigation.navigate('AddIngredient', {title})
+  }
+
+  useFocusEffect(useCallback(() => { //useFocusEffect é um hook do React navigation, é executado quando a tela está em foco, useCallback é um hook do react.
+    console.log("Executou");
+    fetchRecipes() // chama a função que carregou as infos
+  }, []))
   return (
     <View style={styles.container}>
       <StatusBar
@@ -55,13 +62,16 @@ export function Home() {
 
         <FlatList
           data={recept}
-          keyExtractor={item => item}
+          keyExtractor={(item, index) => index.toString()}
           renderItem={({item}) => (
             <RecipeCard
               title={item.title}
               subtitle={item.description}
               image={item.image}
+              onPress={() => handleOpenRecipe(item.title)}
             />
+            
+            
           )}
           contentContainerStyle = {recept.length === 0 && { flex: 1 }}
           ListEmptyComponent={() => (
@@ -73,7 +83,7 @@ export function Home() {
 
         <ButtonAdd 
           title="Adicionar Receita"
-          props={handleAddRecipe}
+          props={handleAddRecipes}
           
         />
       </View>

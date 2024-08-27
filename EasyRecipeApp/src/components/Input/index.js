@@ -9,7 +9,7 @@ export function Input({showBigInput, title, onChangeText}) {
       <TextInput
         multiline={showBigInput}
         textAlignVertical="top"
-        maxLength={showBigInput ? 80 : 30}
+        maxLength={showBigInput ? 50 : 30}
         returnKeyType={showBigInput ? "default" : "done"}
         blurOnSubmit={!showBigInput}
         style={showBigInput ? styles.bigInput : styles.input}
