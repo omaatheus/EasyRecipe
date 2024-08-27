@@ -1,6 +1,6 @@
 import { View, Image, StyleSheet, TouchableOpacity } from "react-native";
 import React from "react";
-import theme from "../../../theme";
+import theme from "../../theme";
 import { MaterialIcons } from '@expo/vector-icons'
 import { useNavigation } from "@react-navigation/native";
 
@@ -10,7 +10,7 @@ export function Header({showBackButton}) {
 
   return (
     <View style={styles.header}>
-      { showBackButton && <TouchableOpacity onPress={() => navigation.goBack()}>
+      { showBackButton && <TouchableOpacity onPress={() => navigation.popToTop()}>
         <MaterialIcons name="keyboard-arrow-left" size={50}/>
       </TouchableOpacity> }
     </View>

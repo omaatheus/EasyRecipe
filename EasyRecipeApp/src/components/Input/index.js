@@ -1,18 +1,19 @@
 import { TextInput, StyleSheet, View, Text } from "react-native";
 import React from "react";
-import theme from "../../../theme";
+import theme from "../../theme";
 
-export function Input({showBigInput, title}) {
+export function Input({showBigInput, title, onChangeText}) {
   return (
     <View style={styles.container}>
       <Text style={styles.text}>{title}</Text>
       <TextInput
         multiline={showBigInput}
         textAlignVertical="top"
-        maxLength={showBigInput ? 80 : 30}
+        maxLength={showBigInput ? 50 : 30}
         returnKeyType={showBigInput ? "default" : "done"}
         blurOnSubmit={!showBigInput}
         style={showBigInput ? styles.bigInput : styles.input}
+        onChangeText={onChangeText}
       />
     </View>
   );

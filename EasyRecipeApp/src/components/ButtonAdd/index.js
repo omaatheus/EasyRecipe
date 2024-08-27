@@ -1,6 +1,6 @@
 import { TouchableOpacity, Text, StyleSheet, View } from "react-native";
 import React from "react";
-import theme from "../../../theme";
+import theme from "../../theme";
 
 export function ButtonAdd({props, title, add=true}) {
   return (

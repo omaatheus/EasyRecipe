@@ -1,5 +1,5 @@
 import { Text, TouchableOpacity, StyleSheet, View } from "react-native";
-import theme from "../../../theme";
+import theme from "../../theme";
 
 export function Filter({title, isActive, onPress}){
     return(
@@ -39,7 +39,7 @@ const style = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         marginTop: 10,
-        marginBottom: 45,
+        marginBottom: 60,
     },
     containerBg: {
         borderWidth: 1,

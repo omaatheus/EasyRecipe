@@ -1,11 +1,11 @@
 import { View, Image, Text, StyleSheet, TouchableOpacity } from "react-native";
 import React from "react";
-import theme from "../../../theme";
+import theme from "../../theme";
 
-export function RecipeCard({image, title, subtitle}) {
+export function RecipeCard({image, title, subtitle, onPress} ) {
   return (
-    <TouchableOpacity style={styles.card}>
-        <Image style={styles.cardImage} source={image}/>
+    <TouchableOpacity style={styles.card} onPress={onPress}>
+        <Image style={styles.cardImage} source={{uri: image}}/>
 
       <View style={styles.textContainer}>
         <Text style={styles.cardTitle}>{title}</Text>
@@ -29,8 +29,8 @@ const styles = StyleSheet.create({
     },
 
     cardImage: {
-        width: "35%",
-        height: "80%",
+        width: 100,
+        height: 100,
         marginHorizontal: 20,
         borderRadius: 20,
     },
