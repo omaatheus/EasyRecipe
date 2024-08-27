@@ -28,11 +28,11 @@ Ao abrir o aplicativo, clicar em "Adicionar Receita" e seguir o fluxograma.
 
 ## Vídeos de demonstração
 
-[Link para o vídeo de demonstração](https://www.youtube.com/watch?v=123456)
+[Link para o vídeo de demonstração](https://youtu.be/rnwTfWoTjrs?si=opcDuJ6PaOEYJGGo)
 
 ## Imagens do aplicativo
 
-![GoogleDocs](https://docs.google.com/document/d/1BEkLux_9J7SPolyt0ajWk4s9asUf126X0p72SmF6IY4/edit?usp=sharing)
+[GoogleDocs](https://docs.google.com/document/d/1BEkLux_9J7SPolyt0ajWk4s9asUf126X0p72SmF6IY4/edit?usp=sharing)
 
 ## Desenvolvedores e suas funções
 
