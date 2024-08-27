@@ -2,17 +2,20 @@ import { StyleSheet, TextInput, Text, View, TouchableOpacity } from 'react-nativ
 import React from 'react'
 import theme from "../../theme";
 
-export function ButtonIng({title, onPress, value, onChangeText, icon, readOnly, remove}) {
+export function ButtonIng({title, onPress, value, onChangeText, icon, readOnly, remove, inputRef, onSubmitEditing, returnKeyType}) {
   return (
     <View style={styles.container}>
     <View style={styles.form}>
     <TextInput
+      ref={inputRef}
       style={styles.input}
       placeholder={title}
       placeholderTextColor={theme.colors.BLACK_GREEN}
       onChangeText={onChangeText}
       value={value}
       readOnly={readOnly}
+      onSubmitEditing={onSubmitEditing}
+      returnKeyType={returnKeyType}
     />
     {remove ? <TouchableOpacity style={styles.buttonRed} onPress={onPress}>
       <Text style={styles.buttonText}>{icon}</Text>

@@ -10,7 +10,7 @@ export function Header({showBackButton}) {
 
   return (
     <View style={styles.header}>
-      { showBackButton && <TouchableOpacity onPress={() => navigation.goBack()}>
+      { showBackButton && <TouchableOpacity onPress={() => navigation.popToTop()}>
         <MaterialIcons name="keyboard-arrow-left" size={50}/>
       </TouchableOpacity> }
     </View>

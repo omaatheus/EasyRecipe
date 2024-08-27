@@ -36,8 +36,8 @@ export function Home() {
     }
   }
 
-  function handleOpenRecipe(title) {
-    navigation.navigate('AddIngredient', {title})
+  function handleOpenRecipe(title, id) {
+    navigation.navigate('AddIngredient', {title, id})
   }
 
   useFocusEffect(useCallback(() => { //useFocusEffect é um hook do React navigation, é executado quando a tela está em foco, useCallback é um hook do react.
@@ -68,7 +68,7 @@ export function Home() {
               title={item.title}
               subtitle={item.description}
               image={item.image}
-              onPress={() => handleOpenRecipe(item.title)}
+              onPress={() => handleOpenRecipe(item.title, item.id)}
             />
             
             

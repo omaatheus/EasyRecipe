@@ -39,7 +39,7 @@ const style = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         marginTop: 10,
-        marginBottom: 45,
+        marginBottom: 60,
     },
     containerBg: {
         borderWidth: 1,

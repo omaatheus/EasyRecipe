@@ -60,9 +60,11 @@ export function AddRecipe() {
       return Alert.alert("Nova Receita", "O título não pode ser vazio.")
     }
 
-    await recipeCreate({title, description, image}) //espera a função receber os params, se deu tudo certo prossegue para o restante do código
+    const recipeId = await recipeCreate({title, description, image}) //espera a função receber os params, se deu tudo certo prossegue para o restante do código
 
-    navigation.navigate('AddIngredient', { title, description, image }) //AddIngredient está recebendo parametros, esses parametros estão sendo compartilhados entre as rotas
+    
+
+    navigation.navigate('AddIngredient', { title, description, image, id: recipeId }) //AddIngredient está recebendo parametros, esses parametros estão sendo compartilhados entre as rotas
     
 
     console.log('> Cheguei aqui');

@@ -1,24 +1,44 @@
-# Trabalho Escolar - Easy Recipe.
+# Nome do aplicativo: EasyRecipe
 
-## Resumo do Projeto:
-Este projeto tem por finalidade ser um aplicativo para receitas culinárias, tendo como funcionalidade a adição de novas receitas, visualização e remoção de receitas.
+## Descrição do aplicativo
 
-## Integrantes:
-- Daniel Savalla,
-- Davi Fontanini,
-- Dyuliano Luiz,
-- Giovanni Albino,
-- Isabella Caramigo,
-- Matheus Silva.
+Um aplicativo para gerenciar receitas culinárias.
 
-## Tecnologias Utilizadas:
-![React Native](https://img.shields.io/badge/React_Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+## Objetivo do aplicativo
 
-## Observações:
+O objetivo do aplicativo é auxiliar a guardar receitas, tornando uma experiência mais tecnológica.
 
-Este repositório contém o código fonte do aplicativo Easy Recipe, desenvolvido durante o 3o bimestre de PDM (Programação de dispositivos móveis).
+## Funcionalidades do aplicativo
 
-O aplicativo ainda está em desenvolvimento e pode conter bugs ou falhas.
+- Adição de Receita
+- Adição de Ingredientes
+- Remoção de Receitas
+- Remoção de Ingredientes
 
-Para mais informações, consulte a documentação do projeto.
+## Instruções de uso
+
+Ao abrir o aplicativo, clicar em "Adicionar Receita" e seguir o fluxograma.
+
+# Instruções de instalação
+
+1. Clone o repositório
+2. Instale as dependências com `npm install`
+3. Execute o aplicativo com `npm start`
+4. Acesse o aplicativo no qr code gerado
+
+## Vídeos de demonstração
+
+[Link para o vídeo de demonstração](https://www.youtube.com/watch?v=123456)
+
+## Imagens do aplicativo
+
+![GoogleDocs](https://docs.google.com/document/d/1BEkLux_9J7SPolyt0ajWk4s9asUf126X0p72SmF6IY4/edit?usp=sharing)
+
+## Desenvolvedores e suas funções
+
+- Daniel Savalla: Responsável por implementar componentes.
+- Davi Fontanini: Responsável pelas rotas públicas do aplicativo.
+- Dyuliano Luiz: Responsável pela paleta de cores do aplicativo.
+- Giovanni Albino: Responsável por gerenciar dependencias do projeto.
+- Isabella Caramigo: Responsável por desenvolver todas interfaces gráficas.
+- Matheus Silva: Responsável por persistir os dados.
